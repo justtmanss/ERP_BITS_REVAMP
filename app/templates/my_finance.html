@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>My Finance</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.tuition_fee.label }}<br>{{ form.tuition_fee() }}</p>
+    <p>{{ form.payment_status.label }}<br>{{ form.payment_status(size=32) }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

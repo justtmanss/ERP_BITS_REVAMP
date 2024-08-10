@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Update Specialization</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.specialization_id.label }}<br>{{ form.specialization_id() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

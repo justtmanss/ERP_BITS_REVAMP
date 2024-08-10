@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Course Registration</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.course_id.label }}<br>{{ form.course_id() }}</p>
+    <p>{{ form.semester.label }}<br>{{ form.semester(size=32) }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University ERP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('my_academics') }}">My Academics</a>
+            <a href="{{ url_for('specialization') }}">Specialization</a>
+            <a href="{{ url_for('registration') }}">Registration</a>
+            <a href="{{ url_for('my_finance') }}">My Finance</a>
+            <a href="{{ url_for('demographic_details') }}">Demographic Details</a>
+            <a href="{{ url_for('student_center') }}">Student Center</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>
+        {% endif %}
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

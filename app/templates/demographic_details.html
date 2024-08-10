@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Demographic Details</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.address.label }}<br>{{ form.address(cols=50, rows=5) }}</p>
+    <p>{{ form.phone.label }}<br>{{ form.phone(size=32) }}</p>
+    <p>{{ form.emergency_contact.label }}<br>{{ form.emergency_contact(size=32) }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+{% endblock %}
